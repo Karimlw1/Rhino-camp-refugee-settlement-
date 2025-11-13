@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="shortcut icon" href="icon.webp" type="image/x-icon" />
+    <title>Login</title>
+
+    <style>
+      img {
+        height: 200px;
+        width: 300px;
+        border-radius: 40px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background: linear-gradient(135deg, #fff, #2a485c, #fff);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow-x: hidden;
+    "
+  >
+    <img src="camp-rhino-header.jpg" alt="" />
+    <form action="get">
+      <h1>Admin Login</h1>
+      <div class="login-box">
+        <div class="input-group">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder=" "
+            required
+          />
+          <label for="username">Username</label>
+        </div>
+
+        <div class="input-group">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder=" "
+            required
+          />
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <button
+        type="submit"
+        style="
+          padding: 10px 20px;
+          background-color: white;
+          color: #0a4d8c;
+          border: solid 1px #0a4d8c;
+          margin: 20px 20px 20px 40px;
+          border-radius: 10px;
+          font-weight: bolder;
+          cursor: pointer;
+        "
+      >
+        Login
+      </button>
+    </form>
+    <script>
+      const adminUsername = "Group12";
+      const adminPassword = "12345";
+
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username === adminUsername && password === adminPassword) {
+          alert("Login successful!");
+          window.location.href = "admin.html";
+        } else {
+          alert("Invalid username or password. Please try again.");
+        }
+      });
+    </script>
+  </body>
+</html>

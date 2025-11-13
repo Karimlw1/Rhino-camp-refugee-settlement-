@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rhino Camp - Add Stock</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #ffffff, #e9ecf0, #e7edf3);
+        color: #0a4d8c;
+        min-height: 100vh;
+      }
+      header {
+        width: 100%;
+        background: #0a4d8c;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      }
+      header img.banklogo {
+        width: 260px;
+        border-radius: 8px;
+        border: 2px solid #00bfff;
+      }
+      .nav-links2 a {
+        color: #eee;
+        text-decoration: none;
+        padding: 10px 16px;
+        margin: 0 4px;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: 0.3s ease;
+      }
+      .nav-links2 a:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: #00d4ff;
+      }
+      .nav-links2 a.active {
+        background: #0a4d8c;
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+      .header3 button {
+        background: linear-gradient(90deg, #00bfff, #0040ff);
+        border: none;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+      .header3 button:hover {
+        background: #0078d7;
+        transform: translateY(-2px);
+      }
+      .container {
+        max-width: 800px;
+        margin: 70px auto 40px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+      }
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        margin-top: 0.3rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button.submit-btn {
+        margin-top: 1rem;
+        background: #0a4d8c;
+        color: white;
+        padding: 0.7rem 1.5rem;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      button.submit-btn:hover {
+        background: #004080;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header1">
+        <img class="banklogo" src="camp-rhino-header.jpg" alt="Rhino Logo" />
+      </div>
+      <div class="header2">
+        <nav class="nav-links2">
+          <a href="admin.html"><i class="fa fa-home"></i> Home</a>
+          <a href="inventory&logistics.html" class="active"
+            ><i class="fa fa-boxes"></i> Inventory</a
+          >
+        </nav>
+      </div>
+      <div class="header3">
+        <a href="index.html"
+          ><button><i class="fa fa-sign-out-alt"></i> Log Out</button></a
+        >
+      </div>
+    </header>
+
+    <div class="container">
+      <h1 style="text-align: center">Add New Stock Item</h1>
+      <form action="add_stock.php" method="POST">
+        <label for="item_name">Item Name:</label>
+        <input
+          type="text"
+          name="item_name"
+          id="item_name"
+          placeholder="Food, Medicine, Blankets..."
+          required
+        />
+
+        <label for="quantity">Quantity:</label>
+        <input
+          type="number"
+          name="quantity"
+          id="quantity"
+          min="1"
+          value="1"
+          required
+        />
+
+        <label for="unit">Unit:</label>
+        <select name="unit" id="unit">
+          <option value="pcs">pcs</option>
+          <option value="kg">kg</option>
+          <option value="ltr">ltr</option>
+        </select>
+
+        <label for="category">Category:</label>
+        <input
+          type="text"
+          name="category"
+          id="category"
+          placeholder="Optional"
+        />
+
+        <button type="submit" class="submit-btn">Add to Stock</button>
+      </form>
+    </div>
+  </body>
+</html>

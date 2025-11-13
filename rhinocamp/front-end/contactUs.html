@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="shortcut icon" href="icon.webp" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>Contact Us</title>
+    <style>
+      /* Container animation */
+      @keyframes floatIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f4f6f8;
+        margin: 0;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+      }
+
+      .contact-box {
+        max-width: 420px;
+        width: 90%;
+        background: #fff;
+        border-radius: 15px;
+        padding: 35px 30px;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        animation: floatIn 0.8s ease forwards;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .contact-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-box h2 {
+        color: #0a4d8c;
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+        position: relative;
+      }
+
+      /* Subtle underline effect */
+      .contact-box h2::after {
+        content: "";
+        width: 60px;
+        height: 3px;
+        background-color: #0a4d8c;
+        display: block;
+        margin: 10px auto 0 auto;
+        border-radius: 2px;
+      }
+
+      .contact-box input,
+      .contact-box textarea {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 18px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        transition: 0.3s;
+      }
+
+      .contact-box input:focus,
+      .contact-box textarea:focus {
+        border-color: #0a4d8c;
+        box-shadow: 0 0 12px rgba(10, 77, 140, 0.2);
+        outline: none;
+      }
+
+      .contact-box button {
+        background-color: #0a4d8c;
+        color: #fff;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s;
+      }
+
+      .contact-box button i {
+        font-size: 1.1rem;
+      }
+
+      .contact-box button:hover {
+        background-color: #0078d7;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Optional: subtle fade-in for inputs */
+      .contact-box input,
+      .contact-box textarea,
+      .contact-box button {
+        opacity: 0;
+        animation: floatIn 0.8s ease forwards;
+      }
+
+      .contact-box input:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .contact-box input:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .contact-box textarea {
+        animation-delay: 0.3s;
+      }
+      .contact-box button {
+        animation-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header1">
+        <img class="banklogo" src="camp-rhino-header.jpg" alt="BANK LOGO" />
+        <div class="hamburger-menu">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+        <nav class="nav-links">
+          <a id="a-first" href="contactUs.html">Contact Us</a>
+          <a href="aboutUs.html">About Us</a>
+          <a id="a-last" href="login.html">admin</a>
+        </nav>
+      </div>
+
+      <div class="header2">
+        <nav class="nav-links2">
+          <a href="index.html" class="home"><i class="fa fa-home"></i> Home</a>
+          <a href="donate.html" class="accounts">Donate</a>
+          <a href="partners.html">Our Partners</a>
+          <a href="locations.html">Our locations</a>
+        </nav>
+      </div>
+      <div class="header3">
+        <a href="login.html"><button>Log In as admin</button></a>
+      </div>
+    </header>
+
+    <main>
+      <div class="contact-box">
+        <h2>Contact Us</h2>
+        <form action="process_contact.php" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
