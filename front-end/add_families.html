@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Family - Rhino Camp</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+      .container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      label,
+      input,
+      button {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+      }
+      button {
+        padding: 10px;
+        background: #001f3f;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Add a New Family</h2>
+      <form action="add_family.php" method="POST">
+        <label for="family_name">Family Name:</label>
+        <input
+          type="text"
+          name="family_name"
+          id="family_name"
+          required
+          placeholder="Enter family name"
+        />
+        <label for="family_name">head of family:</label>
+        <input
+          type="text"
+          name="head_of_family"
+          id="head_of_family"
+          required
+          placeholder="Enter head of family name"
+        />
+
+        <button type="submit">Add Family</button>
+      </form>
+    </div>
+  </body>
+</html>
